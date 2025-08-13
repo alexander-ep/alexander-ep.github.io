@@ -1,4 +1,4 @@
-// Scroll progress indicator
+/*// Scroll progress indicator
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight;
@@ -10,7 +10,39 @@ window.addEventListener('scroll', () => {
     if (indicator) {
         indicator.style.width = scrolled + '%';
     }
-});
+});*/
+
+// Fonction throttle pour optimiser les performances
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Scroll progress indicator optimisé
+const updateScrollProgress = throttle(() => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const scrollPercent = scrollTop / (docHeight - winHeight);
+    const scrolled = Math.min(Math.max(scrollPercent * 100, 0), 100);
+    
+    const indicator = document.getElementById('scrollIndicator');
+    if (indicator) {
+        // Utilisation de transform au lieu de width pour de meilleures performances
+        indicator.style.transform = `scaleX(${scrolled / 100})`;
+    }
+}, 16); // 60fps
+
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
 
 // Intersection Observer for animations
 const observerOptions = {
