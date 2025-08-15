@@ -104,7 +104,7 @@ function scrollToContact() {
     if (contactSection) {
         const headerOffset = 100; // Ajustez selon la hauteur de votre header
         const elementPosition = contactSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         // Version avec animation personnalisée très lente
         const startPosition = window.pageYOffset;
