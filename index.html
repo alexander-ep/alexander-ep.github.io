@@ -44,6 +44,63 @@
     <p class="description">
         Développeur iOS passionné spécialisé en SwiftUI. Je transforme des idées innovantes en applications mobiles élégantes et performantes, en combinant design moderne et code de qualité.
     </p>
+
+    
+    <!-- Nouveau bouton à ajouter -->
+    <div class="hero-cta">
+    <button id="contact-button" class="contact-btn" onclick="scrollToContact('ultra-slow')">
+        <i class="fas fa-envelope"></i>
+        Me contacter
+    </button>
+</div>
+
+<style>
+        .hero-cta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        #contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff;
+            background: linear-gradient(135deg, #007AFF, #00C7BE);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
+            filter: brightness(1.1);
+        }
+
+        #contact-button:active {
+            transform: translateY(0);
+        }
+
+        #contact-button i {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        #contact-button:hover i {
+            transform: scale(1.1);
+        }
+    </style>
+
 </header>
 
     <!-- Timeline Section -->
@@ -66,36 +123,41 @@
 
 
 
-            <!-- Project 1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-date">Janvier 2024</div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="project-title">TaskMaster Pro</h3>
-                    <p class="project-description">
-                        Application de gestion de tâches avec synchronisation cloud, notifications intelligentes et analyses de productivité avancées.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">SwiftUI</span>
-                        <span class="tech-tag">Core Data</span>
-                        <span class="tech-tag">CloudKit</span>
-                        <span class="tech-tag">Push Notifications</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            GitHub
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-app-store"></i>
-                            App Store
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- Project 1 -->
+<div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="project-date">Janvier 2024</div>
+    <div class="project-card" data-href="finance_tracker.html" style="cursor: pointer;">
+        <div class="project-icon">
+            <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3 class="project-title">TaskMaster Pro</h3>
+        <p class="project-description">
+            Application de gestion de tâches avec synchronisation cloud, notifications intelligentes et analyses de productivité avancées.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Core Data</span>
+            <span class="tech-tag">CloudKit</span>
+            <span class="tech-tag">Push Notifications</span>
+        </div>
+        <div class="project-links">
+            <a href="#" class="project-link">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+            <a href="#" class="project-link">
+                <i class="fab fa-app-store"></i>
+                App Store
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
             <!-- Project 2 -->
             <div class="timeline-item">
@@ -539,6 +601,8 @@
         return emailRegex.test(email);
     }
 </script>
+
+
 
     
 </body>
