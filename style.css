@@ -1204,4 +1204,13 @@ body {
     padding: 20px !important;
 }
 
+#floating-contact-btn:hover {
+    transform: scale(1.1);
+}
+
+#floating-contact-btn i {
+  display: block;
+  margin-left: -3px; /* ou margin-left: -0.5px; */
+  font-size: 20px;
+}
 
