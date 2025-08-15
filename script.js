@@ -84,3 +84,58 @@ document.addEventListener('DOMContentLoaded', function() {
         track.innerHTML = originalContent + originalContent; // Duplication automatique
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCard = document.querySelector('.project-card[data-href]');
+    
+    projectCard.addEventListener('click', function(e) {
+        // Empêcher la navigation si on clique sur les liens GitHub/App Store
+        if (!e.target.closest('.project-links')) {
+            window.location.href = this.dataset.href;
+        }
+    });
+});
+
+
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const headerOffset = 100; // Ajustez selon la hauteur de votre header
+        const elementPosition = contactSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        // Version avec animation personnalisée très lente
+        const startPosition = window.pageYOffset;
+        const distance = offsetPosition - startPosition;
+        const duration = 3500; // 3.5 secondes (très lent)
+        let startTime = null;
+
+        function animateScroll(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // Fonction d'easing très douce
+            const easeProgress = easeInOutQuart(progress);
+            
+            window.scrollTo(0, startPosition + distance * easeProgress);
+            
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll);
+            }
+        }
+
+        // Fonction d'easing très douce
+        function easeInOutQuart(t) {
+            return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+        }
+
+        requestAnimationFrame(animateScroll);
+    }
+}
+
+
+
+
