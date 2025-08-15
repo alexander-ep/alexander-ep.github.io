@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function scrollToContact() {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-        const headerOffset = 100; // Ajustez selon la hauteur de votre header
+        const headerOffset = -100; // Ajustez selon la hauteur de votre header
         const elementPosition = contactSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
