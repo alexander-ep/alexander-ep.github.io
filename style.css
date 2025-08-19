@@ -702,6 +702,7 @@ body {
 
 /* Section Contact */
 .contact-section {
+    padding: 0 0 100px 0;
     background: #0a0a0a;
     position: relative;
 }
@@ -1203,6 +1204,9 @@ body {
     padding: 20px !important;
 }
 
+
+
+
 #floating-contact-btn:hover {
     transform: scale(1.1);
 }
@@ -1212,4 +1216,3 @@ body {
   margin-left: -3px; /* ou margin-left: -0.5px; */
   font-size: 20px;
 }
-
