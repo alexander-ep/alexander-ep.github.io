@@ -136,6 +136,92 @@ function scrollToContact() {
     }
 }
 
+// ===== PROJETS MOBILE SLIDER =====
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.projects-track');
+    const dots = document.querySelectorAll('.projects-mobile-dots .dot');
+    const cards = document.querySelectorAll('.project-mobile-card');
+    
+    if (!track || !dots.length) return;
+    
+    let currentSlide = 0;
+    const totalSlides = cards.length;
+    
+    function goToSlide(slideIndex) {
+        if (slideIndex >= totalSlides) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = totalSlides - 1;
+        
+        
+        track.style.transform = `translateX(-${slideIndex * 100}%)`;
+        
+        // Mettre à jour les dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[slideIndex]) {
+            dots[slideIndex].classList.add('active');
+        }
+        
+        currentSlide = slideIndex;
+    }
+    
+    // Navigation par dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Navigation tactile (swipe)
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        track.style.transition = 'none';
+    });
+    
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        const diff = currentX - startX;
+        const currentTransform = -currentSlide * 100;
+        const newTransform = currentTransform + (diff / track.offsetWidth) * 100;
+        track.style.transform = `translateX(${newTransform}%)`;
+    });
+    
+    track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        const diff = currentX - startX;
+        const threshold = 50;
+        
+        if (diff > threshold) {
+            goToSlide(currentSlide - 1);
+        } else if (diff < -threshold) {
+            goToSlide(currentSlide + 1);
+        } else {
+            goToSlide(currentSlide);
+        }
+    });
+    
+    // Clics sur les cartes
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            const href = this.dataset.href;
+            if (href) {
+                window.open(href, '_blank');
+            }
+        });
+    });
+    
+    // Auto-slide (optionnel)
+    /*
+    setInterval(() => {
+        goToSlide(currentSlide + 1);
+    }, 5000);
+    */
+});
 
 
 
