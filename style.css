@@ -122,45 +122,6 @@ body {
     text-align: center;
 }
 
-/* Custom styling for birth item */
-.birth-card {
-    border-radius: 25px !important;
-    padding: 1.5rem 2rem !important;
-}
-
-.birth-content {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.birth-icon {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
-}
-
-.birth-icon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #007AFF;
-    box-shadow: 0 20px 60px rgba(0, 122, 255, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.birth-icon img:hover {
-    transform: scale(1.05);
-}
-
-.birth-text {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #e0e0e0;
-    margin: 0;
-}
-
 /* Timeline Container */
 .timeline-container {
     max-width: 1200px;
