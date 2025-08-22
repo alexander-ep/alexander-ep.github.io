@@ -16,6 +16,16 @@
 <meta property="og:description" content="Portfolio d'Alexander Epstein, développeur iOS de 18 ans spécialisé en SwiftUI et applications mobiles modernes">
 <meta property="og:type" content="website">
 
+<!-- Ajoute ces optimisations dans le <head> -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ton-domaine.com">
+
+<!-- Optimisation images -->
+<link rel="preload" as="image" href="pp.jpg">
+
+
 
     <title>Portfolio Timeline - Développeur iOS</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -107,7 +117,7 @@
     <main class="timeline-container">
         <div class="timeline">
 
-         
+          
 
 
 
@@ -243,128 +253,6 @@
 
         </div>
     </main>
-
-    <!-- Section projets mobile (à placer après la timeline) -->
-<section class="projects-mobile-section">
-    <div class="container">
-        <h2 class="section-title">Mes Projets</h2>
-        <p class="section-subtitle">Découvrez mes réalisations en développement iOS</p>
-        
-        <div class="projects-mobile-container">
-            <div class="projects-track">
-                
-                <!-- Projet 1 - Finance Tracker -->
-                <div class="project-mobile-card" data-href="finance_tracker.html">
-                    <div class="project-mobile-image">
-                        <img src="finance_tracker_icon.png" alt="Finance Tracker" loading="lazy">
-                        <div class="project-status">
-                            <span class="status-badge live">En ligne</span>
-                        </div>
-                    </div>
-                    <div class="project-mobile-content">
-                        <div class="project-mobile-header">
-                            <h3 class="project-mobile-title">Finance Tracker</h3>
-                            <span class="project-date">Jan 2024</span>
-                        </div>
-                        <p class="project-mobile-description">
-                            Application de gestion financière personnelle avec suivi des dépenses en temps réel et analyses détaillées.
-                        </p>
-                        <div class="project-mobile-tags">
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">Core Data</span>
-                            <span class="tech-tag">Charts</span>
-                        </div>
-                        <div class="project-mobile-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-download"></i>
-                                <span>1.2K+</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.8/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 2 - Mood Journal -->
-                <div class="project-mobile-card" data-href="mood_journal.html">
-                    <div class="project-mobile-image">
-                        <img src="mood_journal_icon.png" alt="Mood Journal" loading="lazy">
-                        <div class="project-status">
-                            <span class="status-badge live">En ligne</span>
-                        </div>
-                    </div>
-                    <div class="project-mobile-content">
-                        <div class="project-mobile-header">
-                            <h3 class="project-mobile-title">Mood Journal</h3>
-                            <span class="project-date">Nov 2023</span>
-                        </div>
-                        <p class="project-mobile-description">
-                            Journal intime numérique pour le suivi de l'humeur avec analyses et insights personnalisés.
-                        </p>
-                        <div class="project-mobile-tags">
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">HealthKit</span>
-                            <span class="tech-tag">CoreML</span>
-                        </div>
-                        <div class="project-mobile-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-download"></i>
-                                <span>800+</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.9/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 3 - Task Master -->
-                <div class="project-mobile-card" data-href="task_master.html">
-                    <div class="project-mobile-image">
-                        <img src="task_master_icon.png" alt="Task Master" loading="lazy">
-                        <div class="project-status">
-                            <span class="status-badge development">En développement</span>
-                        </div>
-                    </div>
-                    <div class="project-mobile-content">
-                        <div class="project-mobile-header">
-                            <h3 class="project-mobile-title">Task Master</h3>
-                            <span class="project-date">Déc 2023</span>
-                        </div>
-                        <p class="project-mobile-description">
-                            Gestionnaire de tâches intelligent avec IA pour optimiser la productivité quotidienne.
-                        </p>
-                        <div class="project-mobile-tags">
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">CloudKit</span>
-                            <span class="tech-tag">Siri Shortcuts</span>
-                        </div>
-                        <div class="project-mobile-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Bientôt</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ajoute d'autres projets selon tes besoins -->
-                
-            </div>
-        </div>
-        
-        <!-- Navigation dots -->
-        <div class="projects-mobile-dots">
-            <div class="dot active" data-slide="0"></div>
-            <div class="dot" data-slide="1"></div>
-            <div class="dot" data-slide="2"></div>
-        </div>
-    </div>
-</section>
-
 
 <!-- Section Avis Clients - À ajouter après la timeline -->
 <section class="testimonials-section">
@@ -581,7 +469,7 @@
     </div>
 </section>
 
-    <!-- Bouton de contact fixe - à ajouter avant </body> -->
+<!-- Bouton de contact fixe - à ajouter avant </body> -->
 <div id="floating-contact-btn" onclick="scrollToContact()" style="
     position: fixed;
     bottom: 30px;
@@ -600,6 +488,7 @@
     box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
     transition: transform 0.2s ease;
 "><i class="fas fa-paper-plane"></i></div>
+
 
     <script src="script.js"></script>
     <!-- Scripts à ajouter avant la fermeture du </body> -->
@@ -628,7 +517,7 @@
         // Envoi via EmailJS
         emailjs.sendForm(EMAIL_CONFIG.serviceID, EMAIL_CONFIG.templateID, this)
             .then(function() {
-                // Succès ✅
+                // Succès 
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
                 submitBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
                 
@@ -643,8 +532,7 @@
                     if (label) label.classList.remove('active');
                 });
                 
-                // Notification de succès
-                // showNotification('Message envoyé avec succès ! Je vous répondrai rapidement.', 'success');
+                
                 
                 // Reset du bouton après 3 secondes
                 setTimeout(() => {
